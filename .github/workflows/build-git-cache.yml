@@ -34,7 +34,7 @@ jobs:
     runs-on: electron-arc-linux-amd64-32core
     container:
       image: ghcr.io/electron/build:bc2f48b2415a670de18d13605b1cf0eb5fdbaae1
-      options: --user root
+      options: --user root --device /dev/fuse --cap-add SYS_ADMIN
       volumes:
         - /mnt/win-cache:/mnt/win-cache
     env:
